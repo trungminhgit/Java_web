@@ -1,2 +1,2 @@
 # Java_web
-SPRING WEB MVB 
+SPRING WEB MVC
