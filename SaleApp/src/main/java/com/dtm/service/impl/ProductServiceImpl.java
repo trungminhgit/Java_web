@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
  * @author ACER
  */
 @Service
-public class ProductService implements com.dtm.service.ProductService{
+public class ProductServiceImpl implements com.dtm.service.ProductService{
     @Autowired
     private ProductRepository productRepo;
     

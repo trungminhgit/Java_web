@@ -4,13 +4,13 @@
  */
 package com.dtm.configs;
 
+import java.text.SimpleDateFormat;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.view.InternalResourceView;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
@@ -38,6 +38,10 @@ public class WebAppContextConfig implements WebMvcConfigurer{
         r.setPrefix("/WEB-INF/pages/");
         r.setSuffix(".jsp");
         return r;
+    }
+    @Bean
+    public SimpleDateFormat simpleDateFormat() {
+        return new SimpleDateFormat("yyyy-MM-dd");
     }
     
 }
