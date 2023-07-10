@@ -4,9 +4,13 @@
  */
 package com.dtm.controllers;
 
+import com.dtm.service.ProductService;
+import java.util.Map;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -14,9 +18,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class IndexController {
+    @Autowired
+    private ProductService productService;
     @RequestMapping("/")
-    public String index(Model model){
-        model.addAttribute("msg","TEST");
+    public String index(Model model, @RequestParam Map<String,String> params){
+        model.addAttribute("products",this.productService.getProducts(params));
         return "index";
     }
 }
